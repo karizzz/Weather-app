@@ -1,0 +1,227 @@
+/* ================================================= */
+/* Custom properties */
+/* ================================================= */
+:root {
+	--body-font: 'Figtree', sans-serif;
+
+	--p-shade-80: #050B12;
+	--p-shade-50: #0e1b2d;
+	--p-shade-30: #13263e;
+	--p-shade-20: #162b47;
+	--primary: #1b3659;
+	--p-tint-40: #76869b;
+	--p-tint-90: #e8ebee;
+	--secondary: #EFA00B;
+	--tertiary: #03B5AA;
+
+	--global-border-radius: 4px;
+	--global-transition: all .2s ease-in-out;
+}
+
+
+
+/* ============================================================ */
+/* General styles */
+/* ============================================================ */
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: var(--body-font);
+	background-color: var(--primary);
+	color: var(--p-tint-90);
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	padding: 4rem 2rem;
+}
+
+
+
+/* ================================================= */
+/* Typography */
+/* ================================================= */
+p {
+	margin: 0 0 1.5rem;
+}
+
+h1 {
+	font-size: 2.375rem;
+	line-height: 1.25;
+	margin: 0 0 2rem;
+    
+}
+
+h2 {
+	font-size: 1.75rem;
+	line-height: 1.15;
+	margin: 0 0 .5rem;
+}
+
+h3 {
+	font-size: 1rem;
+	line-height: 1.25;
+	margin: 0;
+}
+
+small,
+.form-msg,
+.city__country {
+	font-size: .75rem;
+	line-height: 1.5;
+}
+
+a {
+	color: var(--secondary);
+	text-decoration: none;
+	transition: var(--global-transition);
+}
+
+a:hover {
+	color: var(--p-tint-90);
+}
+
+
+
+/* ================================================= */
+/* Forms */
+/* ================================================= */
+form {
+	width: 100%;
+	margin-bottom: 2rem;
+	max-width: 30rem;
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+input[type="text"] {
+	height: 2.75rem;
+	background: var(--p-shade-30) url('search-icon-free-vector.jpg') no-repeat .75rem center;
+	background-size: 1.5rem 1.5rem;
+	color: var(--p-tint-90);
+	padding-left: 2.75rem;
+	border-radius: var(--global-border-radius);
+	border: none;
+	outline: none;
+	transition: var(--global-transition);
+	flex-grow: 1;
+}
+
+input::placeholder {
+	color: var(--p-tint-40);
+}
+
+input:focus,
+input:hover {
+	background-color: var(--p-shade-50);
+}
+
+form button {
+	height: 2.75rem;
+	padding: 0.5rem 1rem;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+form button:hover {
+	background-color: var(--p-shade-80);
+}
+
+form button:active {
+	background-color: var(--p-shade-50);
+}
+
+
+/* ================================================= */
+/* Header */
+/* ================================================= */
+.notification {
+	background-color: var(--p-shade-80);
+	padding: .5rem 2rem;
+	width: 100%;
+}
+
+.notification p {
+	margin: 0;
+}
+
+
+
+/* ================================================= */
+/* Cities */
+/* ================================================= */
+.cities {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr); /* Limit to 5 items per row */ 
+    gap: 1.5rem; /* Add spacing between cards */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Each city card */
+.cities li {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align items */
+    gap: 0.5rem; /* Adjust spacing inside cards */
+    background-color: white;
+    padding: 1.5rem; /* Add padding inside the card */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    color: var(--p-shade-80);
+    text-align: center; /* Center align text */
+}
+
+.city__country {
+    color: var(--p-tint-40);
+    border-radius: var(--global-border-radius);
+    margin-left: .5rem;
+}
+/* ================================================= */
+/* 560px+ */
+/* ================================================= */
+@media screen and (min-width: 560px) {
+	.cities {
+		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	}
+
+	.cities li {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.city__conditions {
+		margin-bottom: 1.5rem;
+	}
+}
+
+
+
+/* ================================================= */
+/* 768px+ */
+/* ================================================= */
+@media screen and (min-width: 768px) {
+	.notification {
+		padding: .5rem 4rem;
+	}
+
+	.container {
+		padding: 4rem;
+	}
+}
