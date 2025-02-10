@@ -4,7 +4,8 @@ const inp = document.querySelector("input"); // Input field
 const list = document.querySelector(".cities"); // Cities list
 
 // API key
-const apiKey = "abbd0934a03a35e0e69902014f15349a";
+// use your own api key from open weather
+//const apiKey = "";
 
 // Event listener for the form
 form.addEventListener("submit", (e) => {
